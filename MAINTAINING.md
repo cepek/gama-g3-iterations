@@ -452,7 +452,7 @@ To install new release run
 
     sudo make install
 
-Binaries will be install to ```/usr/local/bin```
+Binaries will be installed to ```/usr/local/bin```
 
        cmp_xml_file     gama-g3                 gama-local-xml2sql
        compare-xyz      gama-local              gama-local-xml2txt

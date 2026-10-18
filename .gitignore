@@ -42,6 +42,7 @@ Makefile.user
 *.json
 out
 *.patch
+.idea/
 #
 aclocal.m4
 autom4te.cache/
