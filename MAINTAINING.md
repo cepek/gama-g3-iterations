@@ -446,6 +446,21 @@ of expat parser
 
     make check    # build all and run all tests including the extra tests
 
+### Importing a repository with GitHub Importer
+
+To import a repository from another Git-based hosting service to
+GitHub.com:
+
+1. In the upper-right corner of GitHub.com, select Create new..., then
+   Import repository.
+2. Enter the URL of the source repository.
+3. If the repository is private, provide the credentials GitHub needs
+   to clone it.
+4. Select the owner and name for the new GitHub repository.
+5. Choose the repository visibility.
+6. Select Begin import.
+
+
 ## Install new release
 
 To install new release run
