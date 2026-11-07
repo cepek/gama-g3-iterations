@@ -376,6 +376,9 @@ target_link_libraries(gama-local PUBLIC libgama)
 add_executable(gama-g3 src/gama-g3.cpp)
 target_link_libraries(gama-g3 PUBLIC libgama)
 
+add_executable(gama-g3-iteration src/gama-g3-iteration.cpp)
+target_link_libraries(gama-g3-iteration PUBLIC libgama)
+
 add_executable(gama-local-gkf2yaml src/gama-local-gkf2yaml.cpp
                lib/gnu_gama/local/gkf2yaml.cpp)
 target_link_libraries(gama-local-gkf2yaml PUBLIC libgama)
@@ -406,7 +409,8 @@ endif()
 
 # Installation
 #
-install(TARGETS gama-local gama-g3 gama-local-gkf2yaml krumm2gama-local
+install(TARGETS gama-local gama-g3 gama-g3-iteration
+        gama-local-gkf2yaml krumm2gama-local
         compare-xyz gama-local-deformation
         DESTINATION ${GAMA_INSTDIR})
 
