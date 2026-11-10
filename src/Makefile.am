@@ -12,13 +12,17 @@ endif
 
 if GNU_GAMA_G3_ENABLED
    GAMA_G3 = gama-g3
+   GAMA_G3_ITER = gama-g3-iter
 endif
 
 if GNU_GAMA_LOCAL_TEST_YAML_CPP
    GAMA_YAML = gama-local-yaml2gkf
 endif
 
-bin_PROGRAMS = $(GAMA_LOCAL) $(COMPARE_XYZ) $(GAMA_G3) $(GAMA_YAML)
+bin_PROGRAMS = $(GAMA_LOCAL) $(COMPARE_XYZ) $(GAMA_YAML) \
+               $(GAMA_G3) $(GAMA_G3_ITER)
+
+# $(GAMA_G3_ITER)
 
 gama_local_SOURCES = gama-local.cpp
 gama_local_LDADD   = $(top_builddir)/lib/libgama.a
@@ -44,6 +48,12 @@ if GNU_GAMA_G3_ENABLED
    gama_g3_SOURCES  = gama-g3.cpp
    gama_g3_LDADD    = $(top_builddir)/lib/libgama.a
    gama_g3_CPPFLAGS = -I $(top_srcdir)/lib
+endif
+
+if GNU_GAMA_G3_ENABLED
+   gama_g3_iter_SOURCES  = gama-g3-iter.cpp
+   gama_g3_iter_LDADD    = $(top_builddir)/lib/libgama.a
+   gama_g3_iter_CPPFLAGS = -I $(top_srcdir)/lib
 endif
 
 if GNU_GAMA_LOCAL_TEST_YAML_CPP

@@ -32,10 +32,12 @@ gama-*.*.tar.gz.sig
 gama-*.*.tar.gz.asc
 announce-*.*.err
 announce-*.*.txt
+*.swp
 *.zip
 a.out
 *.pro*
 *.autosave
+*results*
 gama-local-pro
 Makefile.am.user
 Makefile.user
@@ -106,6 +108,7 @@ doc/gama.t2d
 doc/gama.dvi
 #
 src/gama-g3
+src/gama-g3-iter
 src/gama-local
 src/gama-local-deformation
 src/gama-local-xml2txt

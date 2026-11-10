@@ -2,6 +2,7 @@ EXTRA_DIST = CMakeLists.txt
 
 if GNU_GAMA_G3_ENABLED
    GAMA_G3 = gama-g3
+   GAMA_G3_ITER = gama-g3-iter
 endif
 
 if GNU_GAMA_LOCAL_EXTRA_TESTS
@@ -25,4 +26,4 @@ KRUMM = krumm
 
 
 SUBDIRS = $(GAMA_LOCAL) $(GAMA_LOCAL_DEFORMATION) $(COMPARE_XYZ) \
-          $(KRUMM) $(GAMA_G3) $(EXTRA_TESTS)
+          $(KRUMM) $(GAMA_G3) $(XXXGAMA_G3_ITER) $(EXTRA_TESTS)

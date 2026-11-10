@@ -15,7 +15,7 @@ using std::string;
 
 int main(int args, char* argv[])
 {
-    cerr << "\ngama-g3-iterations ...\n\n";
+    cerr << "\ngama-g3-iter ...\n\n";
 
     GNU_gama::g3::Model* model = new GNU_gama::g3::Model();
     cout << model << "\n";
