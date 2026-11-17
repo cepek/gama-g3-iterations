@@ -12,22 +12,20 @@
 #
 # In either case, the testsuite is invoked via ‘make check’.
 
-#---TESTSA = gama-g3-adjustment.sh \
-#---         gama-g3-ellipsoid-xyz2blh.sh \
-#---         gama-g3-ellipsoid-xyz2blh-list.sh
-#---
-#---if GNU_GAMA_LOCAL_TEST_XMLLINT
-#---TESTXML = gama-g3-xmllint-xsd.sh
-#---endif
-#---
-#---TESTS = $(TESTSA) $(TESTXML)
-#---
-#---SUBDIRS = input src
-#---
-#---INPUT_FILES = demo-g3-01 demo-g3-02 demo-g3-03 \
-#---              ghilani-gnss-v1 ghilani-gnss-v2 ghilani-gnss-v3
+TESTSA = gama-g3-iter
 
-TESTS = gama-g3-iter
+
+
+
+
+
+TESTS = $(TESTSA)
+
+
+SUBDIRS = input src
+
+INPUT_FILES = demo-g3iter-01
+
 
 G3ITER_SRC     = $(srcdir)/src
 G3ITER_INPUT   = $(srcdir)/input
@@ -37,8 +35,8 @@ G3ITER_OTHERS  = Makefile $(G3_RESULTS)
 do_subst = sed -e 's,[@]top_builddir[@],$(top_builddir),g' \
                -e 's,[@]PACKAGE_VERSION[@],$(PACKAGE_VERSION),g' \
                -e 's,[@]INPUT_FILES[@],$(INPUT_FILES),g' \
-               -e 's,[@]G3_INPUT[@],$(G3_INPUT),g' \
-               -e 's,[@]G3_RESULTS[@],$(G3_RESULTS),g' \
+               -e 's,[@]G3ITER_INPUT[@],$(G3ITER_INPUT),g' \
+               -e 's,[@]G3ITER_RESULTS[@],$(G3ITER_RESULTS),g' \
                -e 's,[@]GAMA_XML[@],$(top_srcdir)/xml,g'
 
 clean-local: clean-local-check
@@ -46,13 +44,14 @@ clean-local: clean-local-check
 clean-local-check:
 	-rm -rf $(G3ITER_RESULTS) $(TESTS)
 
-$(G3_RESULTS):
+$(G3ITER_RESULTS):
 	mkdir -p $(G3ITER_RESULTS)
 
-gama-g3-iter.sh: $(G3ITER_SRC)/gama-g3-iter.in $(G3_OTHERS)
-	@$(do_subst) < $(G3_SRC)/gama-g3-iter.in \
-	        > gama-g3-iter.sh
-	@chmod +x gama-g3-iter.sh
+gama-g3-iter.sh: $(G3ITER_SRC)/gama-g3-iter.in $(G3ITER_OTHERS)
+    echo "### gama-g3-iter.sh" > gama-g3-iter.sh
+#	@$(do_subst) < $(G3ITER_SRC)/gama-g3-iter.in \
+#	        > gama-g3-iter.sh
+#	@chmod +x gama-g3-iter.sh
 
 
 #---gama-g3-adjustment.sh: $(G3_SRC)/gama-g3-adjustment.in $(G3_OTHERS)
