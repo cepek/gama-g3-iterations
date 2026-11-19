@@ -2,7 +2,7 @@ EXTRA_DIST = CMakeLists.txt
 
 if GNU_GAMA_G3_ENABLED
    GAMA_G3 = gama-g3
-   # GAMA_G3_ITER = gama-g3-iter
+#   GAMA_G3_ITER = gama-g3-iter
 endif
 
 if GNU_GAMA_LOCAL_EXTRA_TESTS
@@ -14,6 +14,8 @@ GAMA_LOCAL_DEFORMATION = gama-local-deformation
 COMPARE_XYZ = compare-xyz
 KRUMM = krumm
 
+###GAMA_G3 = gama-g3
+###GAMA_G3_ITER = gama-g3-iter
 
 # uncomment for testing purposes
 
